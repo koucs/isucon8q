@@ -7,6 +7,7 @@ sudo systemctl restart torb.python.service
 
 # Clean up /var/log/h2o/access.log
 sudo -H bash -c "echo '' > /var/log/h2o/access.log"
+sudo -H bash -c "cp /home/isucon/config/h2o/h2o.conf /etc/h2o/h2o.conf"
 sudo systemctl restart h2o.service
 
 echo "end deploying"
