@@ -110,8 +110,6 @@ def get_events(filter=lambda e: True):
         events = []
         for event_id in event_ids:
             event = get_event(event_id, need_detail=False)
-            for sheet in event['sheets'].values():
-                del sheet['detail']
             events.append(event)
         conn.commit()
     except MySQLdb.Error as e:
