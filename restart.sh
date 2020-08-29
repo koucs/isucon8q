@@ -6,7 +6,7 @@ sudo -H -u isucon bash -c 'source /home/isucon/.bash_profile && cd /home/isucon/
 sudo systemctl restart torb.python.service
 
 # Clean up /var/log/h2o/access.log
-# sudo -H bash -c "echo '' > /var/log/h2o/access.log"
+sudo -H bash -c "echo '' > /var/log/h2o/access.log"
 sudo systemctl restart h2o.service
 
 echo "end deploying"
