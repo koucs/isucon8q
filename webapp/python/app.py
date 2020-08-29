@@ -31,8 +31,10 @@ class CustomFlask(flask.Flask):
 app = CustomFlask(__name__, static_folder=str(static_folder), static_url_path='')
 app.config['SECRET_KEY'] = 'tagomoris'
 
+
 from werkzeug.contrib.profiler import ProfilerMiddleware
 app.wsgi_app = ProfilerMiddleware(app.wsgi_app, profile_dir="/tmp/profile")
+
 
 if not os.path.exists(str(icons_folder)):
     os.makedirs(str(icons_folder))
